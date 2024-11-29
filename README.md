@@ -2,7 +2,7 @@
 Librairie qui gère des accès aux OS, leurs particularités.
 
 # Comment l'utiliser ?
-Utiliser la classe [`com.studioequipe.apios.OS`](src/main/java/com/studioequipe/apios/OS.java).
+Utiliser la classe [`com.phenix.apios.OS`](src/main/java/com/phenix/apios/OS.java).
 ```java
 // Valeur Windows pour un OS.
 OS.WINDOWS;
