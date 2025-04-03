@@ -3,6 +3,10 @@
  */
 package com.phenix.apios;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
+
 /**
  * Gestion des informations OS.
  *
@@ -25,6 +29,8 @@ public enum OS {
     /**
      * Valeur de comparaison utilisée.
      */
+    @NotNull
+    @NotBlank
     private final String valeur;
 
     /**
@@ -32,7 +38,7 @@ public enum OS {
      *
      * @param valeur La valeur.
      */
-    private OS(String valeur) {
+    private OS(@NotNull @NotBlank String valeur) {
         this.valeur = valeur;
     }
 
@@ -41,6 +47,7 @@ public enum OS {
      *
      * @return L'OS.
      */
+    @Null
     public static OS fromOSName() {
         String nom_os = getOS();
         if (isWindows(nom_os)) {
@@ -57,6 +64,7 @@ public enum OS {
      *
      * @return Nom de l'OS.
      */
+    @NotNull
     public static String getOS() {
         return System.getProperty("os.name");
     }
@@ -99,7 +107,7 @@ public enum OS {
      * {@code System.getProperty("os.name");}).
      * @return {@code true} si c'est Windows.
      */
-    public static boolean isWindows(String nom_os) {
+    public static boolean isWindows(@NotNull String nom_os) {
         return nom_os.toLowerCase().contains(WINDOWS.valeur);
     }
 }
