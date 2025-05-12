@@ -31,7 +31,7 @@ public enum OS {
      */
     @NotNull
     @NotBlank
-    private final String valeur;
+    public final String valeur;
 
     /**
      * Définit la valeur de gestion pour un OS.
@@ -49,10 +49,10 @@ public enum OS {
      */
     @Null
     public static OS fromOSName() {
-        String nom_os = getOS();
-        if (isWindows(nom_os)) {
+        String nomOs = getOS();
+        if (isWindows(nomOs)) {
             return WINDOWS;
-        } else if (isMacOSX(nom_os)) {
+        } else if (isMacOSX(nomOs)) {
             return MACOSX;
         } else {
             return null;
@@ -82,12 +82,12 @@ public enum OS {
     /**
      * Retourne {@code true} si le nom de l'OS est macOS X.
      *
-     * @param nom_os Nom de l'OS (normalement
+     * @param nomOs Nom de l'OS (normalement
      * {@code System.getProperty("os.name");}).
      * @return {@code true} si c'est macOS X.
      */
-    public static boolean isMacOSX(String nom_os) {
-        return MACOSX.valeur.equals(nom_os);
+    public static boolean isMacOSX(String nomOs) {
+        return MACOSX.valeur.equals(nomOs);
     }
 
     /**
@@ -103,11 +103,11 @@ public enum OS {
     /**
      * Retourne {@code true} si le nom de l'OS est Windows.
      *
-     * @param nom_os Nom de l'OS (normalement
+     * @param nomOs Nom de l'OS (normalement
      * {@code System.getProperty("os.name");}).
      * @return {@code true} si c'est Windows.
      */
-    public static boolean isWindows(@NotNull String nom_os) {
-        return nom_os.toLowerCase().contains(WINDOWS.valeur);
+    public static boolean isWindows(@NotNull String nomOs) {
+        return nomOs.toLowerCase().contains(WINDOWS.valeur);
     }
 }
