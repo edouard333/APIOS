@@ -22,6 +22,8 @@ public enum OS {
      */
     MACOSX("Mac OS X"),
     /**
+     * Pas encore définit.
+     *
      * @deprecated Pas encore définit.
      */
     LINUX("XXX");
