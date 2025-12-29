@@ -1,4 +1,4 @@
-# APIOS
+# API OS
 Librairie qui gère des accès aux OS, leurs particularités.
 
 # Comment l'utiliser ?
